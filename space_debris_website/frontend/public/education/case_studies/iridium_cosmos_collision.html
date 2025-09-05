@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iridium-Cosmos Collision Case Study - Space Debris Monitoring</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1976d2;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+            margin-top: 25px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .key-facts {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+        figcaption {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 8px;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #1565c0;
+        }
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #1976d2;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid #1976d2;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            left: 50%;
+        }
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid #fff;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid #fff;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .right::after {
+            left: -10px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        @media screen and (max-width: 600px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .left::after, .right::after {
+                left: 15px;
+            }
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-button">← Back to Dashboard</a>
+    
+    <h1>The Iridium-Cosmos Collision: A Landmark Space Debris Event</h1>
+    
+    <div class="key-facts">
+        <h3>Key Facts:</h3>
+        <ul>
+            <li><strong>Date:</strong> February 10, 2009</li>
+            <li><strong>Altitude:</strong> Approximately 789 km (490 miles)</li>
+            <li><strong>Location:</strong> Over Siberia</li>
+            <li><strong>Objects Involved:</strong> Iridium 33 (active commercial satellite) and Cosmos 2251 (defunct Russian military satellite)</li>
+            <li><strong>Relative Velocity:</strong> 11.7 km/s (42,120 km/h or 26,170 mph)</li>
+            <li><strong>Debris Created:</strong> Over 2,300 trackable fragments (>10 cm) and thousands of smaller pieces</li>
+        </ul>
+    </div>
+    
+    <figure>
+        <img src="/static/images/iridium_cosmos_collision.jpg" alt="Iridium-Cosmos Collision Illustration" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Collision_of_Cosmos_2251_and_Iridium_33.jpg/1200px-Collision_of_Cosmos_2251_and_Iridium_33.jpg'">
+        <figcaption>Artist's rendering of the collision between Iridium 33 and Cosmos 2251. Credit: NASA Orbital Debris Program Office</figcaption>
+    </figure>
+    
+    <h2>Background</h2>
+    
+    <p>
+        On February 10, 2009, at 16:56 UTC, two satellites collided at high speed over northern Siberia. This was the first 
+        time in history that two intact satellites had accidentally collided in orbit. The collision occurred between:
+    </p>
+    
+    <table>
+        <tr>
+            <th>Aspect</th>
+            <th>Iridium 33</th>
+            <th>Cosmos 2251</th>
+        </tr>
+        <tr>
+            <td>Type</td>
+            <td>Commercial communications satellite</td>
+            <td>Military communications satellite</td>
+        </tr>
+        <tr>
+            <td>Country of Origin</td>
+            <td>United States</td>
+            <td>Russia (launched by the Soviet Union)</td>
+        </tr>
+        <tr>
+            <td>Launch Date</td>
+            <td>September 14, 1997</td>
+            <td>June 16, 1993</td>
+        </tr>
+        <tr>
+            <td>Status at Collision</td>
+            <td>Operational</td>
+            <td>Defunct (since ~1995)</td>
+        </tr>
+        <tr>
+            <td>Mass</td>
+            <td>Approximately 689 kg</td>
+            <td>Approximately 900 kg</td>
+        </tr>
+    </table>
+    
+    <div class="info-box">
+        <strong>Orbital Information:</strong> Both satellites were in nearly circular polar orbits, but in different orbital planes. 
+        The collision occurred at an almost perpendicular angle, which maximized the impact energy and resulting debris.
+    </div>
+    
+    <h2>The Collision</h2>
+    
+    <p>
+        Prior to the collision, the U.S. Space Surveillance Network was tracking both objects, but no collision warning was 
+        issued. At the time, the SSN was tracking about 18,000 objects and processing approximately 800 potential conjunctions 
+        per day. With limited resources, not all close approaches could be analyzed in detail.
+    </p>
+    
+    <p>
+        The collision occurred at a relative velocity of 11.7 km/s, with a combined impact energy equivalent to the detonation 
+        of approximately 600 kg of TNT. Both satellites were completely destroyed, creating a vast debris field.
+    </p>
+    
+    <h2>Aftermath and Debris Cloud</h2>
+    
+    <p>
+        The collision generated more than 2,300 trackable pieces of debris (larger than 10 cm) and an estimated tens of 
+        thousands of smaller fragments. This event instantly increased the trackable orbital debris population by approximately 10%.
+    </p>
+    
+    <p>
+        The debris clouds from both satellites rapidly dispersed around Earth in their respective orbital planes. Due to the 
+        high altitude of the collision (789 km), much of this debris will remain in orbit for decades or even centuries, 
+        posing an ongoing threat to other satellites and space missions.
+    </p>
+    
+    <div class="timeline">
+        <div class="timeline-container left">
+            <div class="timeline-content">
+                <h3>February 10, 2009</h3>
+                <p>The collision occurs at 16:56 UTC over Siberia, destroying both satellites.</p>
+            </div>
+        </div>
+        <div class="timeline-container right">
+            <div class="timeline-content">
+                <h3>February 12, 2009</h3>
+                <p>NASA confirms the collision and begins tracking debris fragments.</p>
+            </div>
+        </div>
+        <div class="timeline-container left">
+            <div class="timeline-content">
+                <h3>March 2009</h3>
+                <p>The International Space Station performs the first of many evasive maneuvers to avoid debris from this collision.</p>
+            </div>
+        </div>
+        <div class="timeline-container right">
+            <div class="timeline-content">
+                <h3>2009-2012</h3>
+                <p>Multiple satellites are forced to perform collision avoidance maneuvers due to debris from this event.</p>
+            </div>
+        </div>
+        <div class="timeline-container left">
+            <div class="timeline-content">
+                <h3>Present Day</h3>
+                <p>Much of the debris remains in orbit, continuing to pose risks to operational satellites.</p>
+            </div>
+        </div>
+    </div>
+    
+    <h2>Impact on Space Operations</h2>
+    
+    <p>
+        The Iridium-Cosmos collision had significant impacts on space operations and policy:
+    </p>
+    
+    <ul>
+        <li>It highlighted the increasing risk of collisions in low Earth orbit due to the growing population of space debris.</li>
+        <li>The International Space Station and numerous other satellites have had to perform avoidance maneuvers due to debris from this collision.</li>
+        <li>The event accelerated efforts to improve space situational awareness capabilities and develop international guidelines for debris mitigation.</li>
+        <li>It prompted commercial satellite operators to establish better communication channels for sharing orbital data.</li>
+        <li>The collision served as a concrete example of the risks predicted by the Kessler Syndrome theory.</li>
+    </ul>
+    
+    <h2>Lessons Learned</h2>
+    
+    <p>
+        The Iridium-Cosmos collision taught the space community several important lessons:
+    </p>
+    
+    <ol>
+        <li><strong>Improved Tracking is Essential:</strong> The need for better tracking of smaller objects and more accurate orbital predictions.</li>
+        <li><strong>Data Sharing is Crucial:</strong> Enhanced international cooperation and data sharing among spacecraft operators.</li>
+        <li><strong>Defunct Satellites Pose Risks:</strong> The importance of proper end-of-life disposal of satellites.</li>
+        <li><strong>Collision Prediction Resources:</strong> The need for increased resources devoted to conjunction analysis and collision warnings.</li>
+        <li><strong>Debris Remediation:</strong> The urgent need to develop technologies for active debris removal.</li>
+    </ol>
+    
+    <h2>Legacy</h2>
+    
+    <p>
+        The collision remains a landmark event in the history of space debris. It demonstrated that the theoretical risk of 
+        satellite collisions was a real and present danger. Today, this event continues to serve as a powerful case study in 
+        the importance of space situational awareness and debris mitigation efforts.
+    </p>
+    
+    <p>
+        As space becomes increasingly congested with new satellite constellations, the lessons from the Iridium-Cosmos 
+        collision remain highly relevant for ensuring the long-term sustainability of space activities.
+    </p>
+    
+    <a href="/" class="back-button">← Back to Dashboard</a>
+</body>
+</html> 

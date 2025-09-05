@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Space Debris - Space Debris Monitoring</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #1976d2;
+            margin-top: 30px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .danger-box {
+            background-color: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+        figcaption {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 15px;
+            background-color: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-button">← Back to Dashboard</a>
+    
+    <h1>Understanding Space Debris</h1>
+    
+    <p>
+        Space debris, also known as space junk or space waste, consists of defunct human-made objects orbiting Earth. 
+        These objects include old satellites, spent rocket stages, and fragments from disintegration, erosion, and collisions.
+    </p>
+    
+    <figure>
+        <img src="/static/images/space_debris_illustration.jpg" alt="Space Debris Illustration" onerror="this.src='https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2017/04/space_debris/16908277-1-eng-GB/Space_debris_article.jpg'">
+        <figcaption>Artist's impression of space debris in Earth orbit. Credit: ESA</figcaption>
+    </figure>
+    
+    <h2>The Growing Problem</h2>
+    
+    <p>
+        As of 2023, there are over 36,500 pieces of trackable debris (objects larger than 10 cm) in Earth's orbit, 
+        with millions of smaller pieces too small to track but still dangerous. This debris travels at speeds of up 
+        to 28,000 km/h, making even tiny fragments potentially catastrophic if they collide with operational spacecraft.
+    </p>
+    
+    <div class="danger-box">
+        <strong>Danger:</strong> A 1 cm paint fleck traveling at orbital velocity carries the kinetic energy equivalent to 
+        a hand grenade explosion. A collision with a 10 cm object could lead to catastrophic breakup of a satellite or spacecraft.
+    </div>
+    
+    <h2>Sources of Space Debris</h2>
+    
+    <p>The main sources of space debris include:</p>
+    
+    <ul>
+        <li><strong>Defunct Satellites:</strong> Satellites that have reached the end of their operational life and haven't been properly deorbited.</li>
+        <li><strong>Spent Rocket Stages:</strong> Upper stages of launch vehicles that remain in orbit after delivering their payload.</li>
+        <li><strong>Mission-Related Debris:</strong> Objects released during normal satellite deployment and operation.</li>
+        <li><strong>Fragmentation Debris:</strong> Pieces created when larger objects break up, either from explosions or collisions.</li>
+    </ul>
+    
+    <h2>Significant Debris-Creating Events</h2>
+    
+    <p>Several events have significantly increased the amount of space debris:</p>
+    
+    <ul>
+        <li><strong>2007 Chinese ASAT Test:</strong> Created over 3,000 trackable fragments when China destroyed its Fengyun-1C weather satellite.</li>
+        <li><strong>2009 Iridium-Cosmos Collision:</strong> The first major collision between two intact satellites, creating approximately 2,000 trackable pieces.</li>
+        <li><strong>2021 Russian ASAT Test:</strong> Russia destroyed its Cosmos 1408 satellite, creating over 1,500 trackable fragments.</li>
+    </ul>
+    
+    <h2>Kessler Syndrome</h2>
+    
+    <p>
+        The Kessler Syndrome, proposed by NASA scientist Donald J. Kessler in 1978, describes a scenario where the density 
+        of objects in low Earth orbit becomes high enough that collisions could cause a cascade of collisions. This chain 
+        reaction could create an exponentially growing cloud of debris that would make space activities and the use of 
+        satellites in specific orbital ranges impractical for generations.
+    </p>
+    
+    <div class="info-box">
+        <strong>Fact:</strong> Some scientists believe we may have already reached the early stages of the Kessler Syndrome 
+        in certain orbital regions, particularly in the 750-800 km altitude range.
+    </div>
+    
+    <h2>Tracking and Monitoring</h2>
+    
+    <p>
+        Agencies like the U.S. Space Surveillance Network continuously track space debris. They maintain a catalog of 
+        known objects and provide conjunction analysis and collision warnings to satellite operators. However, current 
+        technology can only reliably track objects larger than about 10 cm in low Earth orbit and 1 meter in geostationary orbit.
+    </p>
+    
+    <h2>Mitigation Strategies</h2>
+    
+    <p>International guidelines for mitigating space debris include:</p>
+    
+    <ul>
+        <li><strong>End-of-Life Disposal:</strong> Moving defunct satellites to graveyard orbits or deorbiting them.</li>
+        <li><strong>Passivation:</strong> Removing all stored energy (fuel, batteries) to prevent explosions.</li>
+        <li><strong>Design Improvements:</strong> Creating satellites that generate less debris and are easier to deorbit.</li>
+        <li><strong>Collision Avoidance:</strong> Performing maneuvers to avoid potential collisions.</li>
+    </ul>
+    
+    <h2>Future Technologies for Debris Removal</h2>
+    
+    <p>Several technologies are being developed to actively remove space debris:</p>
+    
+    <ul>
+        <li><strong>Harpoons and Nets:</strong> To capture and control uncooperative objects.</li>
+        <li><strong>Robotic Arms:</strong> For controlled capture of larger objects.</li>
+        <li><strong>Laser Systems:</strong> To alter the orbit of smaller debris pieces.</li>
+        <li><strong>Drag Sails and Electrodynamic Tethers:</strong> To accelerate orbital decay.</li>
+    </ul>
+    
+    <p>
+        Understanding space debris, tracking it, and developing mitigation and removal strategies are crucial for the 
+        sustainable use of space and the protection of valuable space assets that modern society depends on.
+    </p>
+    
+    <a href="/" class="back-button">← Back to Dashboard</a>
+</body>
+</html> 
