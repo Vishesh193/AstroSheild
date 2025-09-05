@@ -94,4 +94,3 @@ If you see an error about package.json not being found, make sure you're running
 
 - Prachi Bansal - Lead Researcher and ML Engineer
 - Vishesh Arora - Data Scientist and Full Stack Developer
-- Prabhrehmat Kaur - Lead Researcher and ML Engineer 
